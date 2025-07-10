@@ -1,0 +1,3 @@
+[ 2025-07-10 12:47:52,379 ] 30 root - INFO - enter the data ingestion method or component
+[ 2025-07-10 12:47:52,427 ] 33 root - INFO - read the dataset as dataframe
+[ 2025-07-10 12:47:52,452 ] 41 root - INFO - Ingestion of data is completed
