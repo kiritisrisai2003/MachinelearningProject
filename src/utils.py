@@ -10,6 +10,7 @@ from sklearn.model_selection import GridSearchCV
 
 from sklearn.metrics import r2_score
 from src.exception import CustomException
+from sklearn.model_selection import GridSearchCV
 
 
 
