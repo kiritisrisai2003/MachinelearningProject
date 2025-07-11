@@ -1,0 +1,136 @@
+[ 2025-07-11 12:16:06,636 ] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.8:5000
+[ 2025-07-11 12:16:06,638 ] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2025-07-11 12:16:56,429 ] 97 werkzeug - INFO - 127.0.0.1 - - [11/Jul/2025 12:16:56] "GET / HTTP/1.1" 200 -
+[ 2025-07-11 12:16:57,726 ] 97 werkzeug - INFO - 127.0.0.1 - - [11/Jul/2025 12:16:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2025-07-11 12:17:29,005 ] 97 werkzeug - INFO - 127.0.0.1 - - [11/Jul/2025 12:17:29] "GET /predictdata HTTP/1.1" 200 -
+[ 2025-07-11 12:18:02,842 ] 838 app - ERROR - Exception on /predictdata [POST]
+Traceback (most recent call last):
+  File "C:\Users\91994\Downloads\MachineLearning\src\utils.py", line 61, in load_object
+    with open(file_path, "rb") as file_obj:
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91994\Downloads\MachineLearning\src\pipeline\predict_pipeline.py", line 18, in predict
+    preprocessor=load_object(file_path=preprocessor_path)
+  File "C:\Users\91994\Downloads\MachineLearning\src\utils.py", line 65, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occured in python script name [C:\Users\91994\Downloads\MachineLearning\src\utils.py] line number [61] error message[[Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "app.py", line 39, in predict_datapoint
+    results=predict_pipeline.predict(pred_df)
+  File "C:\Users\91994\Downloads\MachineLearning\src\pipeline\predict_pipeline.py", line 25, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured in python script name [C:\Users\91994\Downloads\MachineLearning\src\pipeline\predict_pipeline.py] line number [18] error message[Error occured in python script name [C:\Users\91994\Downloads\MachineLearning\src\utils.py] line number [61] error message[[Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl']]
+[ 2025-07-11 12:18:02,850 ] 97 werkzeug - INFO - 127.0.0.1 - - [11/Jul/2025 12:18:02] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -
+[ 2025-07-11 12:19:15,551 ] 838 app - ERROR - Exception on /predictdata [POST]
+Traceback (most recent call last):
+  File "C:\Users\91994\Downloads\MachineLearning\src\utils.py", line 61, in load_object
+    with open(file_path, "rb") as file_obj:
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91994\Downloads\MachineLearning\src\pipeline\predict_pipeline.py", line 18, in predict
+    preprocessor=load_object(file_path=preprocessor_path)
+  File "C:\Users\91994\Downloads\MachineLearning\src\utils.py", line 65, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occured in python script name [C:\Users\91994\Downloads\MachineLearning\src\utils.py] line number [61] error message[[Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "app.py", line 39, in predict_datapoint
+    results=predict_pipeline.predict(pred_df)
+  File "C:\Users\91994\Downloads\MachineLearning\src\pipeline\predict_pipeline.py", line 25, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured in python script name [C:\Users\91994\Downloads\MachineLearning\src\pipeline\predict_pipeline.py] line number [18] error message[Error occured in python script name [C:\Users\91994\Downloads\MachineLearning\src\utils.py] line number [61] error message[[Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl']]
+[ 2025-07-11 12:19:15,553 ] 97 werkzeug - INFO - 127.0.0.1 - - [11/Jul/2025 12:19:15] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -
+[ 2025-07-11 12:23:52,303 ] 838 app - ERROR - Exception on /predictdata [POST]
+Traceback (most recent call last):
+  File "C:\Users\91994\Downloads\MachineLearning\src\utils.py", line 61, in load_object
+    with open(file_path, "rb") as file_obj:
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91994\Downloads\MachineLearning\src\pipeline\predict_pipeline.py", line 18, in predict
+    print("After Loading")
+  File "C:\Users\91994\Downloads\MachineLearning\src\utils.py", line 65, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occured in python script name [C:\Users\91994\Downloads\MachineLearning\src\utils.py] line number [61] error message[[Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "app.py", line 39, in predict_datapoint
+    results=predict_pipeline.predict(pred_df)
+  File "C:\Users\91994\Downloads\MachineLearning\src\pipeline\predict_pipeline.py", line 25, in predict
+src.exception.CustomException: Error occured in python script name [C:\Users\91994\Downloads\MachineLearning\src\pipeline\predict_pipeline.py] line number [18] error message[Error occured in python script name [C:\Users\91994\Downloads\MachineLearning\src\utils.py] line number [61] error message[[Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl']]
+[ 2025-07-11 12:23:52,411 ] 97 werkzeug - INFO - 127.0.0.1 - - [11/Jul/2025 12:23:52] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -
+[ 2025-07-11 12:24:00,305 ] 97 werkzeug - INFO - 127.0.0.1 - - [11/Jul/2025 12:24:00] "GET / HTTP/1.1" 200 -
+[ 2025-07-11 12:24:05,419 ] 97 werkzeug - INFO - 127.0.0.1 - - [11/Jul/2025 12:24:05] "GET /predictdata HTTP/1.1" 200 -
+[ 2025-07-11 12:24:37,455 ] 838 app - ERROR - Exception on /predictdata [POST]
+Traceback (most recent call last):
+  File "C:\Users\91994\Downloads\MachineLearning\src\utils.py", line 61, in load_object
+    with open(file_path, "rb") as file_obj:
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91994\Downloads\MachineLearning\src\pipeline\predict_pipeline.py", line 18, in predict
+    print("After Loading")
+  File "C:\Users\91994\Downloads\MachineLearning\src\utils.py", line 65, in load_object
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occured in python script name [C:\Users\91994\Downloads\MachineLearning\src\utils.py] line number [61] error message[[Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\91994\Downloads\MachineLearning\venv\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "app.py", line 39, in predict_datapoint
+    results=predict_pipeline.predict(pred_df)
+  File "C:\Users\91994\Downloads\MachineLearning\src\pipeline\predict_pipeline.py", line 25, in predict
+src.exception.CustomException: Error occured in python script name [C:\Users\91994\Downloads\MachineLearning\src\pipeline\predict_pipeline.py] line number [18] error message[Error occured in python script name [C:\Users\91994\Downloads\MachineLearning\src\utils.py] line number [61] error message[[Errno 2] No such file or directory: 'artifacts\\preprocessor.pkl']]
+[ 2025-07-11 12:24:37,457 ] 97 werkzeug - INFO - 127.0.0.1 - - [11/Jul/2025 12:24:37] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -
